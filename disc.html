@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>disc</title>
+	<style>
+
+
+		@keyframes circling{
+			0% {
+				transform: rotate(0deg);
+			}
+			100% {
+				transform: rotate(1turn);
+			}
+		}
+		.disc-container.playing .light,
+		.disc-container.playing .cover{
+			/*animation:circling 10s infinite linear;*/
+			animation-play-state: running;
+		}
+		.disc-container.playing .icon-pause{
+			display: block;
+		}
+		.disc-container.playing .icon-play{
+			display: none;
+		}		
+
+		.disc{
+			width: 248px;
+			height: 248px;
+			margin: 63px auto 0;
+			border:1px solid red;
+			position: relative;
+		}
+		.disc::before{
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: url('./images/disc.png') 0 0 no-repeat;
+			background-size: 100%;
+		}
+		.disc::after{
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: url('./images/disc_light.png') 0 0 no-repeat;
+			background-size: 100%;
+		}
+		.disc .cover{
+			width: 156px;
+			height: 156px;
+			border-radius: 50%;
+			background: url(images/disc_inner.png) 0 0 no-repeat;
+			background-size: contain;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
+		.disc .cover img{
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+		}
+		.disc .icon-wrapper{
+			width: 64px;
+			height: 64px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			border: 1px solid #fff;
+			border-radius: 50%;
+			background: rgba(0,0,0,0.4);
+			z-index: 1;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.icon-wrapper .icon{
+			width: 50%;
+			height: 50%;
+			fill: white;
+		}
+		.icon-wrapper .icon-pause{
+			display: none;
+		}
+		.needle-ct{
+			width: 84px;
+			height: 122px;
+			border:1px solid red;
+			position: absolute;
+			top: 0;
+			left:107px;
+			z-index: 2;
+		}
+		.needle-ct .needle{
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div class="disc-container">
+		<div class="needle-ct">
+			<img class="needle" src="./images/needle.png" alt="">
+		</div>
+
+			<div class="disc">
+				<div class="icon-wrapper">
+					<svg class="icon icon-play">
+						 <use xlink:href="#icon-play"></use>
+					</svg>
+					<svg class="icon icon-pause">
+						 <use xlink:href="#icon-PAUSE"></use>
+					</svg>
+				</div>
+				<div class="cover">
+					<img src="http://p1.music.126.net/LEDEjuTe87VjTWrIb_tFLA==/6056110046289559.jpg?imageView&thumbnail=360y360&quality=75&tostatic=0" alt="">
+				</div>
+			</div>
+<!-- 			<img class="circle" src="./images/disc.png" alt="">
+			<img class="light" src="./images/disc_light.png" alt="" class="light">
+			<img class="cover" src="./images/time.webp" alt="" class="cover"> -->
+	</div>
+
+
+
+	<script src="https://at.alicdn.com/t/font_435278_r0m1zp4yblgi7ldi.js"></script>
+	<script src="vendors/jquery.min.js"></script>
+	<script>
+		$(function(){
+
+			// 播放音乐
+
+			var audio = document.createElement('audio');
+			audio.src = '//owtryz1ss.bkt.clouddn.com/C400000LLxut1MwVSC.m4a';
+			audio.oncanplay = function(){
+				audio.play();
+				$('.disc-container').addClass('playing');
+			}
+
+
+			$('.icon-pause').on('click',function(){
+				audio.pause();
+				$('.disc-container').removeClass('playing')
+				// $('.light').css({
+				// 	'animation-play-state':'paused'
+				// })
+				// $('.cover').css({
+				// 	'animation-play-state':'paused'
+				// })
+			})
+
+			$('.icon-play').on('click',function(){
+				audio.play();
+				$('.disc-container').addClass('playing');
+				// $('.light').css({
+				// 	'animation-play-state':'running'
+				// })
+				// $('.cover').css({
+				// 	'animation-play-state':'running'
+				// })
+			})
+		})		
+	</script>
+</body>
+</html>
