@@ -59,7 +59,7 @@ $(function(){
 			this.$coverImg.attr('src',song.cover);
 			// this.$iconWrapper.animate({'opacity':0},2000);
 			this.$page.css({
-				'background-image':`url('${song.bg}')`
+				'background-image':`url(${song.bg})`
 			});
 
 			this.audio.src = song.url;

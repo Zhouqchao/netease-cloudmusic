@@ -119,8 +119,8 @@ $(function(){
 			songs.forEach(function(song,index){
 				var ranking = index+1;
 			  	var html = `<li>
-			  					<span data-ranking="${ranking}"></span>
-								<a href="./song.html?id=${song.id}">
+			  					<span data-ranking=${ranking}></span>
+								<a href=./song.html?id=${song.id}>
 								<h3>${song.name}</h3>
 								<p>
 									<span>${song.singer} - ${song.name}</span>

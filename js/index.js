@@ -56,15 +56,6 @@
 	RenderIndexPage.prototype.getPlayLists = function(){
 		var _this = this;
 
-		//连接到LeanCloud
-		// var APP_ID = 'DBDdgDjhDUF86XBUsX2Ql15X-gzGzoHsz';
-		// var APP_KEY = 'tAQUlyLMWrsge4kJQRP4WlV7';
-
-		// AV.init({
-		//   appId: APP_ID,
-		//   appKey: APP_KEY
-		// });	
-
 		var queryList = new AV.Query('playList');
 
 		queryList.find().then(function(playLists){
@@ -87,7 +78,7 @@
 	    })
 
 	    lists.forEach(function(list,index){
-	    	var html = `<span class="visits">${list.view}</span><img src="${list.picture}" alt="">`;
+	    	var html = `<span class=visits>${list.view}</span><img src=${list.picture} alt="">`;
 	    	var para = `<p>${list.description}</p>`;
 
 		    _this.$listImgCt.eq(index).append(html);	
@@ -124,8 +115,8 @@
 
 			var ranking = index+1 < 10 ? '0'+(index+1) : index+1;
 		  	var html = `<li>
-		  					<span data-ranking="${ranking}"></span>
-							<a href="./song.html?id=${song.id}">
+		  					<span data-ranking=${ranking}></span>
+							<a href=./song.html?id=${song.id}>
 							<h3>${song.name}</h3>
 							<p><i>
 									<svg class="icon-sq" aria-hidden="true">
@@ -250,7 +241,7 @@
 							}
 							songs.forEach(function(song){
 						 		var html = `<li>
-												<a href="./song.html?id=${song.id}">
+												<a href=./song.html?id=${song.id}>
 													<h3>${song.name}</h3>
 													<p>
 														<i>
@@ -310,13 +301,9 @@
 			 		_this.$searchHintList.empty().hide();
 					var song=songInfo[0].attributes;
 						song.id = songInfo[0].id;
-					// var $li = $(`<li>${song.name}<li>`);
-					// $li.addClass('searchHintList-item');
-					// // var html = `<li style="width:90%;margin:0 auto;padding:5px 0 5px 10px;border-top:1px solid #ccc;border-bottom:1px solid #ccc;">${song.name}<li>`;
-					// _this.$searchHintList.append($li);
 
 			 		var html = `<li>
-									<a href="./song.html?id=${song.id}">
+									<a href=./song.html?id=${song.id}>
 									<h3>${song.name}</h3>
 									<p>
 										<i>
