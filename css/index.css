@@ -212,7 +212,7 @@ nav.globalTabs{
 	padding-left: 13px;
 	color: #fff;
 	font-size: 0.375rem;
-	background: url(../images/visits.svg) 0 center no-repeat;
+	background: url('../images/visits.svg') 0 center no-repeat;
 	background-size: 0.34375rem 0.34375rem;
 	line-height: 18px;
 }
@@ -293,7 +293,7 @@ nav.globalTabs{
 
 /*footer ad*/
 footer{
-	background: url(../images/recommand_bg_2x.png) no-repeat center center;
+	background: url('../images/recommand_bg_2x.png') no-repeat center center;
 }
 section.ad{
 	padding-top: 1.31rem;
@@ -345,7 +345,7 @@ section.ad .copyright{
     text-indent: -9999px;
     width: 145px;
     height: 74px;
-    background: url(../images/iconsprit.png) -24px -30px no-repeat;
+    background: url('../images/iconsprit.png') -24px -30px no-repeat;
     background-size: 166px 97px;
 }
 .hotMusic .hotMusicList li{

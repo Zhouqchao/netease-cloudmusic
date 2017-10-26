@@ -59,7 +59,7 @@ $(function(){
 			document.title= list.description;
 
 			//设置header背景图片
-			this.$bgImgCt.css('background-image',`url(${list.bg})`);
+			this.$bgImgCt.css('background-image','url("'+list.bg+'")');
 
 			this.$headLeftImg.attr('src',list.picture);
 			this.$headLeftView.text(list.view);
