@@ -71,7 +71,7 @@ $(function(){
 			this.$tag.prepend('<p>标签：</p>');
 
 			tagList.forEach(function(tag){
-				var html=`<em>${tag}</em>`;
+				var html="<em>"+ tag + "</em>";
 				_this.$tagList.append(html);
 			})
 
@@ -118,18 +118,18 @@ $(function(){
 		
 			songs.forEach(function(song,index){
 				var ranking = index+1;
-			  	var html = `<li>
-			  					<span data-ranking=${ranking}></span>
-								<a href=./song.html?id=${song.id}>
-								<h3>${song.name}</h3>
-								<p>
-									<span>${song.singer} - ${song.name}</span>
-								</p>
-								<svg class="icon-play-circled" aria-hidden="true">
-								    <use xlink:href="#icon-play-circled-copy"></use>
-								</svg>
-								</a>
-							</li>`;
+			  	var html = '<li>'
+			  					+'<span data-ranking='+ ranking+'></span>'
+								+'<a href="./song.html?id='+ song.id+'">'
+								+'<h3>'+song.name+'</h3>'
+								+'<p>'
+									+'<span>'+song.singer+ ' - ' + song.name+'</span>'
+								+'</p>'
+								+'<svg class="icon-play-circled" aria-hidden="true">'
+								    +'<use xlink:href="#icon-play-circled-copy"></use>'
+								+'</svg>'
+								+'</a>'
+							+'</li>';
 				_this.$songList.append(html);
 
 				var $ranking = $('.songList li>span');

@@ -59,7 +59,7 @@ $(function(){
 			this.$coverImg.attr('src',song.cover);
 			// this.$iconWrapper.animate({'opacity':0},2000);
 			this.$page.css({
-				'background-image':`url(${song.bg})`
+				'background-image':"url("+song.bg+")"
 			});
 
 			this.audio.src = song.url;
@@ -117,7 +117,7 @@ $(function(){
 			  			var linesTop = $('.lines').offset().top;
 			  			var offset = whichLineTop-linesTop - _this.$lyric.height() / 3;
 			  			$('.lines').css({
-			  				'transform':`translateY(-${offset}px)`
+			  				'transform':"translateY("+ -offset +"px)"
 			  			})
 			  			$whichLine.addClass('highlight').siblings().removeClass('highlight');
 			  		}

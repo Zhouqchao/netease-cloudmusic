@@ -78,12 +78,12 @@
 	    })
 
 	    lists.forEach(function(list,index){
-	    	var html = `<span class=visits>${list.view}</span><img src=${list.picture} alt="">`;
-	    	var para = `<p>${list.description}</p>`;
+	    	var html = '<span class="visits">'+list.view+'</span><img src='+${list.picture}+' alt="">';
+	    	var para = '<p>'+list.description+'</p>';
 
 		    _this.$listImgCt.eq(index).append(html);	
 		    _this.$listLink.eq(index).append(para);
-		    _this.$listLink.eq(index).attr('href',`./playlist.html?id=${list.id}`);		
+		    _this.$listLink.eq(index).attr('href',"./playlist.html?id="+list.id);		
 	    });		
 	}
 
@@ -114,22 +114,22 @@
 		songs.forEach(function(song,index){
 
 			var ranking = index+1 < 10 ? '0'+(index+1) : index+1;
-		  	var html = `<li>
-		  					<span data-ranking=${ranking}></span>
-							<a href=./song.html?id=${song.id}>
-							<h3>${song.name}</h3>
-							<p><i>
-									<svg class="icon-sq" aria-hidden="true">
-									    <use xlink:href="#icon-sq""></use>
-									</svg>
-								</i>
-								<span>${song.singer} - ${song.name}</span>
-							</p>
-							<svg class="icon-play-circled" aria-hidden="true">
-							    <use xlink:href="#icon-play-circled-copy"></use>
-							</svg>
-							</a>
-						</li>`;
+		  	var html = '<li>'
+		  					+'<span data-ranking='+ranking+'></span>'
+							+'<a href="./song.html?id='+song.id+'">'
+							+'<h3>'+song.name+'</h3>'
+							+'<p><i>'
+									+'<svg class="icon-sq" aria-hidden="true">'
+									    +'<use xlink:href="#icon-sq""></use>'
+									+'</svg>'
+								+'</i>'
+								+'<span>'+song.singer +' - '+ song.name+'</span>'
+							+'</p>'
+							+'<svg class="icon-play-circled" aria-hidden="true">'
+							    +'<use xlink:href="#icon-play-circled-copy"></use>'
+							+'</svg>'
+							+'</a>'
+						+'</li>';
 
 			_this.$latestSongs.append(html);
 			_this.$hotSongs.append(html);
@@ -222,7 +222,7 @@
 								songs[i].id = songsInfo[i].id;
 							}
 							songs.forEach(function(song){
-								var html = `<li class="listItem">${song.name}<i class="magnifier"><i><li>`;
+								var html = '<li class="listItem">'+song.name+'<i class="magnifier"><i><li>';
 								_this.$searchHintList.append(html).show();
 							});
 						}
@@ -240,23 +240,22 @@
 								songs[i].id = songsInfo[i].id;
 							}
 							songs.forEach(function(song){
-						 		var html = `<li>
-												<a href=./song.html?id=${song.id}>
-													<h3>${song.name}</h3>
-													<p>
-														<i>
-															<svg class="icon-sq" aria-hidden="true">
-															    <use xlink:href="#icon-sq""></use>
-															</svg>
-														</i>
-														${song.singer} - ${song.name}
-													</p>
-													<svg class="icon-play-circled" aria-hidden="true">
-													    <use xlink:href="#icon-play-circled-copy"></use>
-													</svg>
-												</a>
-											</li>`;
-
+						 		var html = '<li>'
+												+'<a href="./song.html?id='+song.id +'">'
+													+'<h3>'+song.name+'</h3>'
+													+'<p>'
+														+'<i>'
+															+'<svg class="icon-sq" aria-hidden="true">'
+															    +'<use xlink:href="#icon-sq""></use>'
+															+'</svg>'
+														+'</i>'
+														+song.singer+' - ' + song.name
+													+'</p>'
+													+'<svg class="icon-play-circled" aria-hidden="true">'
+													+'<use xlink:href="#icon-play-circled-copy"></use>'
+													+'</svg>'
+												+'</a>'
+											+'</li>';
 								_this.$searchFinalResult.append(html).show();
 							});
 						}
@@ -302,22 +301,22 @@
 					var song=songInfo[0].attributes;
 						song.id = songInfo[0].id;
 
-			 		var html = `<li>
-									<a href=./song.html?id=${song.id}>
-									<h3>${song.name}</h3>
-									<p>
-										<i>
-											<svg class="icon-sq" aria-hidden="true">
-											    <use xlink:href="#icon-sq""></use>
-											</svg>
-										</i>
-										<span>${song.singer} - ${song.name}</span>
-									</p>
-									<svg class="icon-play-circled" aria-hidden="true">
-									    <use xlink:href="#icon-play-circled-copy"></use>
-									</svg>
-									</a>
-								</li>`;
+					var html = '<li>'
+								    +'<a href="./song.html?id='+song.id +'">'
+										+'<h3>'+song.name+'</h3>'
+										+'<p>'
+											+'<i>'
+												+'<svg class="icon-sq" aria-hidden="true">'
+												    +'<use xlink:href="#icon-sq""></use>'
+												+'</svg>'
+											+'</i>'
+											+song.singer+' - ' + song.name
+										+'</p>'
+										+'<svg class="icon-play-circled" aria-hidden="true">'
+										+'<use xlink:href="#icon-play-circled-copy"></use>'
+										+'</svg>'
+									+'</a>'
+								+'</li>';
 			 		_this.$searchFinalResult.empty().append(html).show();
 				})			
 			})			
