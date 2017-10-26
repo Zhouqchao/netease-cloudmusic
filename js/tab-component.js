@@ -14,6 +14,10 @@ var Tab = (function(){
       }
       Tab.prototype.bind = function(){
           var self = this;
+          console.log('this.menuList:',this.menuList);
+          if(!this.menuList){
+            return false;
+          }
           this.menuList.forEach(function(menu,i){
             menu.onclick = function(e){
               $(window).scrollTop(0);//每次切换tab都让滚动条滚到顶端
