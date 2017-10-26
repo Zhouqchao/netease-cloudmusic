@@ -290,7 +290,7 @@
 				queryName.find().then(function(songInfo){
 					if(songInfo.length === 0){
 						_this.$searchHintList.empty();
-						var $li = $(`<li>没有结果<li>`);
+						var $li = $('<li>没有结果<li>');
 						$li.addClass('searchHintList-item');
 						_this.$searchHintList.append($li);
 						return false;
