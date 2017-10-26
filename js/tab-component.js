@@ -26,7 +26,7 @@ var Tab = (function(){
               this.classList.add('active');
               self.contentList[index].classList.add('active');
             }
-          })
+          });
       }  
 
       return Tab;
