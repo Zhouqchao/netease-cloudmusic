@@ -45,6 +45,7 @@ $(function(){
 			//根据id获取到playList信息，渲染header
 			var queryList = new AV.Query('playList');
 			queryList.get(id).then(function(listInfo){
+				console.log('111',typeof listInfo);
 				var list = listInfo.attributes;
 				_this.renderPlayList(list);
 			}, function (error) {

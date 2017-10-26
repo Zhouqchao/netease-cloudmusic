@@ -1,4 +1,4 @@
-$(function(){
+
 
 	var Player = (function(){
 		var Player = function($ct){
@@ -23,8 +23,9 @@ $(function(){
 			this.$lyric = this.$ct.find('.lyric');
 			this.sentenceList = null;
 			this.song = null;		
-			var searchParams = new URLSearchParams(window.location.search);
-			this.id = searchParams.get('id');	
+			// var searchParams = new URLSearchParams(window.location.search);
+			// this.id = searchParams.get('id');	
+			this.id = location.search.slice(1).split('=')[1];
 			this.audio = document.createElement('audio');
 
 
@@ -174,7 +175,7 @@ $(function(){
 	})();
 
 	new Player($('body'));
-})
+
 	//声明变量
 	// var songData;
 	// var sentenceList;
