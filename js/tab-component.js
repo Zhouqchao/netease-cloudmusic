@@ -2,7 +2,7 @@
 
 
 var Tab = (function(){
-      function Tab(ct){
+      var Tab = function(ct){
         this.ct = ct;
         this.init();
         this.bind();
