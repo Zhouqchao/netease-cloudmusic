@@ -39,9 +39,18 @@ ul,ol{
 	clear: both;
 }
 
+html,
+body{
+	width:100%;
+}
+
+
 
  /*global style*/
+ 
 .page{
+	width:100%;
+	overflow: hidden;
 	display: none;
 }
 
