@@ -46,7 +46,6 @@
 			var query = new AV.Query('Song');
 			query.get(_this.id).then(function (songInfo) {
 
-				console.log('songInfo',songInfo);
 			  	var song = songInfo.attributes;
 			  	//设置网页title
 			  	document.title = song.name;

@@ -32,8 +32,6 @@ var Tab = (function(){
           $('.globalTabs ul>li').each(function(i,menu){
             $(this).on('click',function(){
                 $(window).scrollTop(0);//每次切换tab都让滚动条滚到顶端
-                // var target = e.target;
-                // var index = [].indexOf.call(self.menuList,target);
                 var index = $(this).index();
                 console.log(index);
 

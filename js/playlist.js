@@ -39,13 +39,12 @@ $(function(){
 			});	
 
 			//获取id
-			// var id = location.search.slice(1).split('=')[1];
-			var searchParams = new URLSearchParams(window.location.search);
-			var id = searchParams.get('id');	
+			var id = location.search.slice(1).split('=')[1];
+			// var searchParams = new URLSearchParams(window.location.search);
+			// var id = searchParams.get('id');	
 			//根据id获取到playList信息，渲染header
 			var queryList = new AV.Query('playList');
 			queryList.get(id).then(function(listInfo){
-				console.log('111',typeof listInfo);
 				var list = listInfo.attributes;
 				_this.renderPlayList(list);
 			}, function (error) {
