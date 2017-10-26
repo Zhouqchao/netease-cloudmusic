@@ -4,6 +4,7 @@ $(function(){
 		var Player = function($ct){
 			this.$ct = $ct;
 			this.init();
+			this.getSongData();
 			this.bindEvent();
 		}
 
@@ -26,7 +27,7 @@ $(function(){
 			this.id = searchParams.get('id');	
 			this.audio = document.createElement('audio');
 
-			this.getSongData();
+
 			// this.renderSong();
 			// this.renderLyric();
 			// window.setInterval(this.getCertainLine(),300);
