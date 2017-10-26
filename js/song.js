@@ -4,9 +4,20 @@
 		var Player = function($ct){
 			this.$ct = $ct;
 			this.init();
+			this.linkToLeanCloud();
 			this.getSongData();
 			this.bindEvent();
 		}
+
+		Player.prototype.linkToLeanCloud = function(){
+			var APP_ID = 'DBDdgDjhDUF86XBUsX2Ql15X-gzGzoHsz';
+			var APP_KEY = 'tAQUlyLMWrsge4kJQRP4WlV7';
+
+			AV.init({
+			  appId: APP_ID,
+			  appKey: APP_KEY
+			});			
+		}	
 
 		Player.prototype.init = function(){
 			this.$page = this.$ct.find('.page');
@@ -27,26 +38,15 @@
 			// this.id = searchParams.get('id');	
 			this.id = location.search.slice(1).split('=')[1];
 			this.audio = document.createElement('audio');
-
-
-			// this.renderSong();
-			// this.renderLyric();
-			// window.setInterval(this.getCertainLine(),300);
 		}
 
 		Player.prototype.getSongData = function(){
 			var _this = this;
 
-			var APP_ID = 'DBDdgDjhDUF86XBUsX2Ql15X-gzGzoHsz';
-			var APP_KEY = 'tAQUlyLMWrsge4kJQRP4WlV7';
-
-			AV.init({
-			  appId: APP_ID,
-			  appKey: APP_KEY
-			});		
 			var query = new AV.Query('Song');
 			query.get(_this.id).then(function (songInfo) {
 
+				console.log('songInfo',songInfo);
 			  	var song = songInfo.attributes;
 			  	//设置网页title
 			  	document.title = song.name;
