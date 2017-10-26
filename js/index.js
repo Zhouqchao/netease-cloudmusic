@@ -78,7 +78,7 @@
 	    })
 
 	    lists.forEach(function(list,index){
-	    	var html = '<span class="visits">'+list.view+'</span><img src='+${list.picture}+' alt="">';
+	    	var html = '<span class="visits">'+list.view+'</span><img src="'+list.picture+'" alt="">';
 	    	var para = '<p>'+list.description+'</p>';
 
 		    _this.$listImgCt.eq(index).append(html);	
