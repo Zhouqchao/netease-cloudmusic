@@ -182,7 +182,14 @@ body{
 	background: #D43B32;
 	color: #fff;
 }
-
+@-webkit-keyframes circling{
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(1turn);
+	}	
+}
 @keyframes circling{
 	0% {
 		transform: rotate(0deg);
