@@ -35,7 +35,7 @@
 			this.sentenceList = null;
 			this.song = null;		
 			// var searchParams = new URLSearchParams(window.location.search);
-			// this.id = searchParams.get('id');	
+			// this.id = searchParams.get('id');	移动端不支持，会报错
 			this.id = location.search.slice(1).split('=')[1];
 			this.audio = document.createElement('audio');
 		}
@@ -58,7 +58,6 @@
 		//渲染歌曲
 		Player.prototype.renderSong = function(song){
 			this.$coverImg.attr('src',song.cover);
-			// this.$iconWrapper.animate({'opacity':0},2000);
 			this.$page.css({
 				'background-image':"url('"+song.bg+"')"
 			});
