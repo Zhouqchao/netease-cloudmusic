@@ -25,11 +25,11 @@ body{
 	display: none;
 }
 .disc-container{
-	padding-top: 1.96875rem;
+	padding-top: 1.3rem;
 }
 .disc{
-	width: 7.75rem;
-	height: 7.75rem;
+	width: 6rem;
+	height: 6rem;
 	margin: 0 auto;
 	position: relative;
 	display: flex;
@@ -51,8 +51,8 @@ body{
 	height: 100%;
 }
 .disc .cover{
-	width: 4.875rem;
-	height: 4.875rem;
+	width: 3.875rem;
+	height: 3.875rem;
 	border-radius: 50%;
 	background-color: #0B0B10;
 }
@@ -85,13 +85,13 @@ body{
 	display: none;
 }
 .needle-ct{
-	width: 2.625rem;
-	height: 3.8125rem;
+	width: 2rem;
+	height: 2.6rem;
 	position: absolute;
-	top: -2.03125rem;
-	left:3.34375rem;
+	top: -1.3rem;
+	left:2.7rem;
 	z-index: 2;
-	margin-bottom:1.875rem;
+	/*margin-bottom:1.875rem;*/
 }
 .needle-ct .needle{
 	width: 100%;
@@ -108,12 +108,16 @@ body{
 
 .disc-container.playing .light,
 .disc-container.playing .cover{
+	-webkit-animation:circling 10s infinite linear;
 	animation:circling 10s infinite linear;
+	-webkit-animation-play-state: running;
 	animation-play-state: running;
 }
 .disc-container .light,
 .disc-container .cover{
+	-webkit-animation:circling 10s infinite linear;
 	animation:circling 10s infinite linear;
+	-webkit-animation-play-state: paused;
 	animation-play-state: paused;
 }
 .disc-container.playing .icon-pause{
