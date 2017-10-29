@@ -69,7 +69,13 @@
 		Player.prototype.renderLyric = function(song){
 			var _this = this;
 
-		  	var sentences = [];
+		  	var sentences = [];	
+		  	console.log('song',song)
+		  	if(!song.lyric){
+	  			var $p ='<p class="song-pure">纯音乐，无歌词</p>';
+	  			_this.$lyric.children('.lines').append($p);
+	  			return;
+		  	}
 		  	var parts = song.lyric.split('\n');
 		  	parts.forEach(function(part,index){
 		  		var sentence = part.split(']');
@@ -86,6 +92,7 @@
 			  		});	  			
 		  		}
 		  	})
+
 
 		  	sentences.map(function(obj){
 		  		if(!obj){
@@ -116,7 +123,7 @@
 			  			var whichLineTop = $whichLine.offset().top;
 			  			var linesTop = $('.lines').offset().top;
 			  			var offset = whichLineTop-linesTop - _this.$lyric.height() / 3;
-			  			$('.lines').css({
+			  			_this.$lyric.find('.lines').css({
 			  				'transform':"translateY("+ -offset +"px)"
 			  			})
 			  			$whichLine.addClass('highlight').siblings().removeClass('highlight');

@@ -120,6 +120,22 @@ body{
 	-webkit-animation-play-state: paused;
 	animation-play-state: paused;
 }
+@-webkit-keyframes circling{
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(1turn);
+	}	
+}
+@keyframes circling{
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(1turn);
+	}
+}
 .disc-container.playing .icon-pause{
 	display: block;
 }
@@ -148,7 +164,12 @@ body{
 .song-description .lyric{
 
 }
-
+.lyric .song-pure{
+	font-size: 14px;
+	color: #fff;
+	text-align: center;
+	padding-top: 0.5625rem;
+}
 .song-description .lines{
 	transition: transform 0.5s;
 }
@@ -181,20 +202,4 @@ body{
 .page .links a.main{
 	background: #D43B32;
 	color: #fff;
-}
-@-webkit-keyframes circling{
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(1turn);
-	}	
-}
-@keyframes circling{
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(1turn);
-	}
 }
