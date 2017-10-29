@@ -276,6 +276,8 @@
 		this.$searchHintList.on('click','li',function(){
 				_this.$historyRecord.hide();
 				var value = $(this).text();
+				_this.$searchInput.val(value);
+				
 				var queryName = new AV.Query('Song');
 				queryName.contains('name',value);	
 				queryName.find().then(function(songInfo){

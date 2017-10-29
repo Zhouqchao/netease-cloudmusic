@@ -20,7 +20,7 @@ var GetLocalStorage = (function(){
 			this.$input.on('keypress',function(e){
 				if(e.which === 13){ 
 					_this.value= $(this).val().trim();
-					if(_this.value === ''){
+					if(_this.value === '' || _this.value ===_this.songs[_this.songs.length-1]){
 						return false;
 					}
 					_this.songs.push(_this.value);
@@ -40,6 +40,7 @@ var GetLocalStorage = (function(){
 				for(var i=_this.songs.length-1;i>=0;i--){
 					if(_this.songs[i] === beRemoved){
 						_this.songs.splice(i,1);
+						break;
 					}
 				}
 				//更新localStorage
