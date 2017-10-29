@@ -6,7 +6,7 @@
 			this.init();
 			this.linkToLeanCloud();
 			this.getSongData();
-			this.bindEvent();
+			// this.bindEvent();
 		}
 
 		Player.prototype.linkToLeanCloud = function(){
@@ -53,6 +53,7 @@
 				_this.renderSong(song);
 				_this.renderLyric(song);
 				_this.$page.show();
+				_this.bindEvent();
 			});		
 		}
 		//渲染歌曲

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<audio></audio>
+
+	<button>唱歌</button>
+
+	<script src="./vendors/av-min.js"></script>
+	<script>
+
+			var audio = document.querySelector('audio');
+			var button = document.querySelector('button');
+			var APP_ID = 'DBDdgDjhDUF86XBUsX2Ql15X-gzGzoHsz';
+			var APP_KEY = 'tAQUlyLMWrsge4kJQRP4WlV7';
+
+			AV.init({
+			  appId: APP_ID,
+			  appKey: APP_KEY
+			});	
+
+			var id = location.search.slice(1).split('=')[1];
+			var query = new AV.Query('Song');
+			query.get(id).then(function (songInfo) {
+
+			  	var song = songInfo.attributes;
+			  	//设置网页title
+			  	document.title = song.name;
+			  	audio.src = song.url;
+			  	//在这里调用
+			  	console.log('begin');
+			});	
+			
+			  	button.onclick = function(){
+			  		audio.play();
+			  	}
+			  	console.log('over')
+			// audio.addEventListener('canplaythrough', function(){
+			// 	button.onclick = function(){
+
+			// 		var xhr = new XMLHttpRequest();
+			// 		xhr.onreadystatechange = function(){
+			// 			if(xhr.readyState ===4 && xhr.status ===200){
+			// 				var _src = 'http://owtryz1ss.bkt.clouddn.com/battle.mp3';
+			// 				audio.src=''
+			// 			}
+			// 		}
+			// 		console.log(2);
+			// 		audio.play();
+			// 	}					
+			// }, false);
+	</script>
+</body>
+</html>

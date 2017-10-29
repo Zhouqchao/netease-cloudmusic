@@ -335,6 +335,21 @@ section.ad .copyright{
 	background: url('../images/hot_music_bg_2x.jpg') center center no-repeat;
 	background-size: contain;
 	margin-top: -1px;
+	position: relative;
+}
+.hotMusic .banner::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: url('../images/hot_music_bg_2x.jpg') center center no-repeat;
+	background-size: contain;
+	margin-top: -1px;         
+	-webkit-filter: grayscale(100%);
+    filter: gray;
+    z-index: -1;
 }
 .hotMusic .banner .content{
 	position: relative;
