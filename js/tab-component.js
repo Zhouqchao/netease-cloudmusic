@@ -14,7 +14,6 @@ var Tab = (function(){
       }
       Tab.prototype.bind = function(){
           var self = this;
-          console.log('this.menuList:',this.menuList);
 
           // this.menuList.forEach(function(menu,i){
           //   menu.onclick = function(e){
@@ -33,8 +32,6 @@ var Tab = (function(){
             $(this).on('click',function(){
                 $(window).scrollTop(0);//每次切换tab都让滚动条滚到顶端
                 var index = $(this).index();
-                console.log(index);
-
                 $('.globalTabs ul>li').each(function(i,menu){
                   $(this).removeClass('active');
                   $('.tabContent>li').eq(i).removeClass('active');
