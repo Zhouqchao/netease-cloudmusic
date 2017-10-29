@@ -39,8 +39,7 @@ var GetLocalStorage = (function(){
 
 				for(var i=_this.songs.length-1;i>=0;i--){
 					if(_this.songs[i] === beRemoved){
-						_this.songs.splice(i,1);
-						break;
+						_this.songs.splice(i,1); //有bug：当历史记录中有多个相同记录时，点击删除会同时删除多个相同的记录
 					}
 				}
 				//更新localStorage

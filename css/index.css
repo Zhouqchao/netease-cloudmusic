@@ -441,10 +441,10 @@ section.ad .copyright{
 	line-height: 12px;
 	color: #666;
 }
-.searchMusic .hotSearch ul{
+.searchMusic .hotSearch .hotSearchList{
 	margin: 10px 0 7px;
 }
-.searchMusic .hotSearch li{
+.searchMusic .hotSearchList li{
 	display: inline-block;
 	height: 1.0rem;
 	line-height: 1.0rem;
