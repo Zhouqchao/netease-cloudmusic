@@ -332,13 +332,14 @@ section.ad .copyright{
 	width: 100%;
 	height: 3.90625rem;
 	padding: 0.3125rem 0 0.3125rem 0.625rem;
-	background: url('../images/hot_music_bg_2x.jpg') center center no-repeat;
+	/*background: url('../images/hot_music_bg_2x.jpg') center center no-repeat;*/
+	background-position: center center;
+	background-repeat: no-repeat;
 	background-size: contain;
 	margin-top: -1px;
 	position: relative;
 }
-.hotMusic .banner::before{
-	content: '';
+.hotMusic .banner .grayscale{
 	position: absolute;
 	top: 0;
 	left: 0;

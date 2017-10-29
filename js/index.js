@@ -51,6 +51,7 @@
 		this.$clearBtn = this.$ct.find('.clear');
 		this.$noResult = this.$ct.find('.no-result');
 		// this.linkToLeanCloud();
+		this.$ct.find('.banner').css('background-image','url("../images/hot_music_bg_2x.jpg")');
 	}
 
 	RenderIndexPage.prototype.getPlayLists = function(){
