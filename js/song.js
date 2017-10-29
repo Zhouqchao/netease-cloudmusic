@@ -63,6 +63,7 @@
 			});
 
 			this.audio.src = song.url;
+			this.audio.preload = 'auto';
 			this.$songTitle.text(song.name+' - '+song.singer);		
 		}
 		//渲染歌词
