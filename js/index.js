@@ -3,15 +3,6 @@
 	new Tab(document.querySelector('.page'));
 	new GetLocalStorage($('.page'));
 
-	// 连接到Lean Cloud
-	// var APP_ID = 'DBDdgDjhDUF86XBUsX2Ql15X-gzGzoHsz';
-	// var APP_KEY = 'tAQUlyLMWrsge4kJQRP4WlV7';
-
-	// AV.init({
-	//   appId: APP_ID,
-	//   appKey: APP_KEY
-	// });	
-
 	var RenderIndexPage = function($ct){
 		this.$ct = $ct;
 		this.init();
@@ -51,7 +42,6 @@
 		this.$clearBtn = this.$ct.find('.clear');
 		this.$noResult = this.$ct.find('.no-result');
 		// this.linkToLeanCloud();
-		this.$ct.find('.banner').css('background-image','url("../images/hot_music_bg_2x.jpg")');
 	}
 
 	RenderIndexPage.prototype.getPlayLists = function(){
