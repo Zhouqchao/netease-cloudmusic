@@ -346,7 +346,7 @@
 
 		// 	//点击enter后的最终搜索记录.searchFinalResult
 		this.$searchFinalResult.on('click','li',function(){
-			_this.$searchInput.val('');
+			_this.$searchInput.val($(this).text());
 		})
 	
 		//点击 热门搜索
