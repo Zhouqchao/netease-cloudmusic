@@ -1,4 +1,5 @@
-var $ = require('../lib/jquery.min');
+// var $ = require('../lib/jquery.min');
+import $ from '../lib/jquery.min';
 
 module.exports = (function(){
       var Tab = function(ct){

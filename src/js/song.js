@@ -1,9 +1,9 @@
 import '../css/song.css';
-var AV = require('../lib/av-min.js');
-require('../lib/amfe-flexible.min.js');
+import AV from '../lib/av-min';
+import '../lib/amfe-flexible.min';
+import $ from '../lib/jquery.min';
 
-
-var $ = require('../lib/jquery.min');
+$(function(){
 
 	var Player = (function(){
 		var Player = function($ct){
@@ -109,16 +109,12 @@ var $ = require('../lib/jquery.min');
 		  	})
 
 			this.$lines = this.$ct.find('.lines p');
-			// window.setInterval(function(){
-			// 	_this.getCertainLine(sentences);
-			// },300);
 		  	this.$lines.eq(0).addClass('highlight');
 			this.getCertainLine(sentences);
 		}
 
 		Player.prototype.getCertainLine = function(sentences){
 			var _this = this;
-		  	// this.$lines.eq(0).addClass('highlight');	
 			var $whichLine;
 		  	var curTime = this.audio.currentTime;
 			for(var i=0;i<sentences.length;i++){
@@ -157,6 +153,11 @@ var $ = require('../lib/jquery.min');
 			//设置播放暂停动画
 			this.$iconPause.on('click',function(){
 				_this.audio.pause();
+				var needleTransform = getComputedStyle(_this.$needle[0]).transform;
+				var needleCtTransform = getComputedStyle(_this.$discCt[0]).transform;
+				_this.$discCt[0].style.transform =needleCtTransform === 'none' ?
+				needleTransform : needleTransform.concat(' ',needleCtTransform);
+				console.log(_this.$discCt[0].style.transform); 
 				_this.$iconWrapper.css('opacity',1);
 				_this.$discCt.removeClass('playing');
 				_this.$needle.addClass('needle-rotate');
@@ -190,4 +191,5 @@ var $ = require('../lib/jquery.min');
 	})();
 
 	new Player($('body'));
-
+	
+})

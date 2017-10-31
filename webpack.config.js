@@ -1,35 +1,26 @@
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 	entry: {
-		// jquery:'./src/lib/jquery.min.js',
-		// flexible:'./src/lib/amfe-flexible.min.js',
-		// leancloud:'./src/lib/av-min.js',
 		index:'./src/js/index.js',
 		playlist:'./src/js/playlist.js',
-		song:'./src/js/song.js',
-		// tabComponent:'./src/js/tab-component.js',
-		// localStorage:'./src/js/getLocalStorage.js'
+		song:'./src/js/song.js'
 	},
 	output: {
 		path: path.resolve(__dirname,'dist'),
-		filename: 'js/[name]-[chunkhash].js',
-		// publicPath:'http://zhouqichao.com/netease-cloudmusic'
+		filename: 'js/[name]-[chunkhash].js'
 	},
 	module:{
 		rules:[
-			// {
-			// 	test:/\.js$/,
-			// 	loader:'babel-loader',
-			// 	exclude:path.resolve(__dirname,'node_modules'),
-			// 	include:path.resolve(__dirname,'src'),
-			// 	options:{
-			// 		presets:['es2015']
-			// 	}
-			// },
+			{
+				test:/\.js$/,
+				loader:'babel-loader',
+				exclude:path.resolve(__dirname,'node_modules'),
+				include:path.resolve(__dirname,'src')
+			},
 			{
 				test:/\.css$/,
 				use: ExtractTextPlugin.extract({
@@ -51,6 +42,10 @@ module.exports = {
 			}
 		]
 	},
+	resolve:{
+		"extensions":['.js','.css']
+	},
+	devtool:"source-map",
 	plugins:[
 		new HtmlWebpackPlugin({
 			// filename:'index-[hash].html',

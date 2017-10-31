@@ -17,9 +17,7 @@ a{
 *::after{
 	box-sizing: border-box;
 }
-/*html.hairlines body{
-	font-size: 16px;
-}*/
+
 h1,h2,h3,h4,h5,h6{
 	font-weight: normal;
 }
@@ -629,3 +627,4 @@ div.no-result{
 	white-space: nowrap;	
 	color: #333;
 }
+/*# sourceMappingURL=index-51af6602168c0a905c10e930a140a022.css.map*/

@@ -1,9 +1,7 @@
 import '../css/playlist.css';
-var AV = require('../lib/av-min.js');
-require('../lib/amfe-flexible.min.js');
-
-
-var $ = require('../lib/jquery.min');
+import AV from '../lib/av-min';
+import '../lib/amfe-flexible.min';
+import $ from '../lib/jquery.min';
 
 $(function(){
 
@@ -151,31 +149,3 @@ $(function(){
 
 	new GetPlayList($('.page'));
 })	
-
-
-
-
-
-
-	  //   function renderSongLists(songs){
-			// songs.forEach(function(song,index){
-			// 	var ranking = index+1;
-			//   	var html = `<li>
-			//   					<span data-ranking="${ranking}"></span>
-			// 					<a href="./song.html?id=${song.id}">
-			// 					<h3>${song.name}</h3>
-			// 					<p>
-			// 						<span>${song.singer} - ${song.name}</span>
-			// 					</p>
-			// 					<svg class="icon-play-circled" aria-hidden="true">
-			// 					    <use xlink:href="#icon-play-circled-copy"></use>
-			// 					</svg>
-			// 					</a>
-			// 				</li>`;
-			// 	_this.$songList.append(html);
-
-			// 	var $ranking = $('.songList li>span');
-			// 	$ranking.eq(index).text($ranking.eq(index).attr('data-ranking'));
-			// })
-			// 	_this.$loadingImg.hide();	    	
-	  //   }

@@ -1,21 +1,49 @@
+
+/*css reset*/
+
 *{
-	margin: 0;
+	margin:0;
 	padding: 0;
 	box-sizing: border-box;
 }
 a{
-	text-decoration: none;
+	-webkit-user-select:none;
+	user-select: none;	
 }
-*:before,
-*:after{
+
+*::before{
 	box-sizing: border-box;
 }
+*::after{
+	box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-weight: normal;
+}
+a{
+	color: inherit;
+	text-decoration: none;
+}
+ul,ol{
+	list-style: none;
+}
+
+.clearfix::after{
+	content: "";
+	display: block;
+	clear: both;
+}
+
 html,
 body{
 	margin: 0;
 	padding: 0;
 	height: 100%;
 }
+
+/*global style*/
+
 .page{
 	height: 100%;
 	background-color: #BFBFBF;
@@ -203,3 +231,5 @@ body{
 	background: #D43B32;
 	color: #fff;
 }
+
+/*# sourceMappingURL=song-fbee39b344e26f54d6e88f5cfb341dec.css.map*/
