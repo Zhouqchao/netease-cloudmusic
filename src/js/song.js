@@ -27,6 +27,7 @@ $(function(){
 		Player.prototype.init = function(){
 			this.$page = this.$ct.find('.page');
 			this.$discCt = this.$ct.find('.disc-container');
+			this.$needleCt = this.$ct.find('.needle-ct');
 			this.$cover = this.$ct.find('.cover');
 			this.$coverImg = this.$ct.find('.cover img'); 
 			this.$light = this.$ct.find('.disc-container .light');
@@ -153,11 +154,11 @@ $(function(){
 			//设置播放暂停动画
 			this.$iconPause.on('click',function(){
 				_this.audio.pause();
-				// var needleTransform = getComputedStyle(_this.$needle[0]).transform;
-				// var needleCtTransform = getComputedStyle(_this.$discCt[0]).transform;
-				// _this.$discCt[0].style.transform =needleCtTransform === 'none' ?
-				// needleTransform : needleTransform.concat(' ',needleCtTransform);
-				// console.log(_this.$discCt[0].style.transform); 
+				var needleTransform = getComputedStyle(_this.$needle[0]).transform;
+				var needleCtTransform = getComputedStyle(_this.$needleCt[0]).transform;
+				_this.$needleCt[0].style.transform =needleCtTransform === 'none' ?
+				needleTransform : needleTransform.concat(' ',needleCtTransform);
+				console.log(_this.$needleCt[0].style.transform); 
 				_this.$iconWrapper.css('opacity',1);
 				_this.$discCt.removeClass('playing');
 				_this.$needle.addClass('needle-rotate');
