@@ -1,4 +1,6 @@
-var GetLocalStorage = (function(){
+var $ = require('../lib/jquery.min');
+
+module.exports = (function(){
 		function GetLocalStorage($ct){
 			this.$ct = $ct;
 
@@ -61,6 +63,6 @@ var GetLocalStorage = (function(){
 		}
 
 	return GetLocalStorage;
-})()
+})();
 
 // new GetLocalStorage($('body'));

@@ -1,7 +1,18 @@
 
 	// Tab组件 —————— 顶部水平导航栏Tab切换功能
-	new Tab(document.querySelector('.page'));
-	new GetLocalStorage($('.page'));
+	// new Tab(document.querySelector('.page'));
+	// new GetLocalStorage($('.page'));
+import '../css/index.css';
+
+var AV = require('../lib/av-min.js');
+require('../lib/amfe-flexible.min.js');
+
+
+var $ = require('../lib/jquery.min');
+var Tab = require('./tabComponent');
+new Tab(document.querySelector('.page'));
+var GetLocalStorage = require('./getLocalStorage');
+new GetLocalStorage($('body'));
 
 	var RenderIndexPage = function($ct){
 		this.$ct = $ct;
@@ -345,9 +356,9 @@
 			})	
 
 		// 	//点击enter后的最终搜索记录.searchFinalResult
-		this.$searchFinalResult.on('click','li',function(){
-			_this.$searchInput.val($(this).text());
-		})
+		// this.$searchFinalResult.on('click','li',function(){
+		// 	_this.$searchInput.val($(this).text());
+		// })
 	
 		//点击 热门搜索
 		this.$hotSearch.on('click','li',function(){
@@ -452,138 +463,3 @@
 	}	
 
 	new RenderIndexPage($('.page'));
-
-
-//随机生成热门歌曲
-// function getRandom(){
-// 	var arr = [];
-//     for(var i=0;i<10;i++){  
-//       arr.push(parseInt(Math.random()*14));
-//     }
-// 	arr =  arr.filter(function(ele){
-// 		return arr.indexOf(ele) === arr.lastIndexOf(ele);
-// 	});
-// 	return arr;
-// }
-
-		
-
-// 	//点击enter后的最终搜索记录.searchFinalResult
-// 	$('.searchFinalResult').on('click','li',function(){
-// 		$searchInput.val('');
-// 	})
-
-
-
-
-// })
-
-// 	// getLocalStorage.js
-// 	// new GetLocalStorage($('body'));
-// 	// 点击历史记录.hostoryRecord列表
-	
-// 	$('.historyRecord').on('click','li',function(){
-// 		$('.hotSearch').hide();
-//  		$('.historyRecord').hide();				
-// 		$('input').val($(this).text());
-// 		$('.clear').show();
-// 		var value = $('input').val();
-
-// 		$('.searchMusic .loading').show();
-// 		var queryName = new AV.Query('Song');
-// 		queryName.contains('name',value);	 
-// 		var querySinger = new AV.Query('Song');
-// 		querySinger.contains('singer',value);
-// 		var query = AV.Query.or(queryName,querySinger);
-// 		query.find().then(function(songInfo){
-// 			$('.searchMusic .loading').hide();
-
-// 			if(songInfo.length === 0){
-// 				$('.hotSearch').hide();
-// 				$('.no-result').show();
-// 				return false;
-// 			}else{
-// 				var song=songInfo[0].attributes;
-// 				song.id = songInfo[0].id;
-
-// 		 		var html = `<li>
-// 								<a href="./song.html?id=${song.id}">
-// 								<h3>${song.name}</h3>
-// 								<p>
-// 									<i>
-// 										<svg class="icon-sq" aria-hidden="true">
-// 										    <use xlink:href="#icon-sq""></use>
-// 										</svg>
-// 									</i>
-// 									${song.singer} - ${song.name}
-// 								</p>
-// 								<svg class="icon-play-circled" aria-hidden="true">
-// 								    <use xlink:href="#icon-play-circled-copy"></use>
-// 								</svg>
-// 								</a>
-// 							</li>`;
-// 		 		// $searchFinalResult.empty().append(html);
-// 		 		$searchFinalResult.empty().append(html).show();
-// 			}		
-// 		})
-
-// 		if($('input').val().trim() === ''){
-// 			$('.historyRecord').show();	
-// 		}
-// 	});
-
-
-
-
-// 	//点击 热门搜索
-	
-// 	$('.hotSearch').on('click','li',function(){
-// 		$('.hotSearch').hide();
-// 		$('.historyRecord').hide();
-// 		$('input').val($(this).text());
-// 		$('.clear').show();
-// 		var value = $('input').val();
-// 		$('.searchMusic .loading').show();
-// 			console.log('songsData:',songsData);
-// 		var queryName = new AV.Query('Song');
-// 		queryName.contains('name',value);	 
-// 		var querySinger = new AV.Query('Song');
-// 		querySinger.contains('singer',value);
-// 		var query = AV.Query.or(queryName,querySinger);
-// 		query.find().then(function(songsInfo){
-
-// 		$('.searchMusic .loading').hide();
-// 		//热门搜索里的歌曲肯定能搜到，所以这里的if不写也可以
-// 			if(songsInfo.length === 0){
-// 				$('.hotSearch').hide();
-// 				$('.no-result').show();
-// 				// return false;
-// 			}else{		
-// 				var song=songsInfo[0].attributes;
-// 				song.id = songsInfo[0].id;
-// 				console.log(song);
-// 		 		var html = `<li>
-// 								<a href="./song.html?id=${song.id}">
-// 								<h3>${song.name}</h3>
-// 								<p>
-// 									<i>
-// 										<svg class="icon-sq" aria-hidden="true">
-// 										    <use xlink:href="#icon-sq""></use>
-// 										</svg>
-// 									</i>
-// 									<span>${song.singer} - ${song.name}</span>
-// 								</p>
-// 								<svg class="icon-play-circled" aria-hidden="true">
-// 								    <use xlink:href="#icon-play-circled-copy"></use>
-// 								</svg>
-// 								</a>
-// 							</li>`;
-// 		 		$searchFinalResult.empty().prepend(html).show();
-// 			}		
-// 		})
-
-// 		if($('input').val().trim() === ''){
-// 			$('.historyRecord').show();	
-// 		}
-// 	})
-

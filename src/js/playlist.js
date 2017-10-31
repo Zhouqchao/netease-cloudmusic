@@ -1,3 +1,10 @@
+import '../css/playlist.css';
+var AV = require('../lib/av-min.js');
+require('../lib/amfe-flexible.min.js');
+
+
+var $ = require('../lib/jquery.min');
+
 $(function(){
 
 	var GetPlayList = (function(){

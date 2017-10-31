@@ -259,9 +259,7 @@ nav.globalTabs{
 	position: relative;
 	line-height: 0.5625rem;
 }
-.hotMusic .content{
-	z-index: 1;
-}
+
 .hotMusic .content .update-time{
 	color: #F5F5F5;
 	font-size: 0.375rem;
@@ -358,6 +356,7 @@ section.ad .copyright{
 	position: relative;
 	width: 9.375rem;
 	height: 100%;
+	z-index: 1;
 }
 .hotMusic .banner .hotMusic-title{
     text-indent: -9999px;
