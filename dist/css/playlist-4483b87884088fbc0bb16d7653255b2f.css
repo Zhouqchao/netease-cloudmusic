@@ -82,7 +82,7 @@ header .head-left .view{
     padding-left: 15px;
     color: #fff;
     font-size: 0.375rem;
-    background: url(http://127.0.0.1:8080/dist/images/visits.svg) 0 center no-repeat;
+    background: url(http://zhouqichao.com/netease-cloudmusic/dist/images/visits.svg) 0 center no-repeat;
     background-size: 0.34375rem 0.34375rem;
     line-height: 18px;	
     text-shadow: 1px 0 0 rgba(0,0,0,.15);
@@ -186,11 +186,11 @@ main{
 	bottom: 3px;
 	width: 12px;
 	height: 12px;
-	background: url(http://127.0.0.1:8080/dist/images/down.png) 0 0 no-repeat;
+	background: url(http://zhouqichao.com/netease-cloudmusic/dist/images/down.png) 0 0 no-repeat;
 	background-size: 100% auto;
 }
 .description .brief .down.whole-text{	
-	background: url(http://127.0.0.1:8080/dist/images/up.png) 0 0 no-repeat;
+	background: url(http://zhouqichao.com/netease-cloudmusic/dist/images/up.png) 0 0 no-repeat;
 	background-size: 100% auto;
 }
 
@@ -288,6 +288,6 @@ footer{
 	width: 22px;
 	height: 22px;
 	border:1px solid orangered;
-	background: url(http://127.0.0.1:8080/dist/images/footer_bg.svg) 0 0 no-repeat;
+	background: url(http://zhouqichao.com/netease-cloudmusic/dist/images/footer_bg.svg) 0 0 no-repeat;
 	background-size: contain;
 }
