@@ -51,8 +51,11 @@ module.exports = {
 			// filename:'index-[hash].html',
 			filename:'index.html',
 			template:'src/index.html',
+			favicon:'src/favicon.ico',
 			minify:{
-				removeComments:true
+				removeComments:true,
+				collapseInlineTagWhitespace:true,
+				minifyCSS:true
 			},
 			chunks:['index']
 		}),
@@ -60,8 +63,11 @@ module.exports = {
 			// filename:'playlist-[hash].html',
 			filename:'playlist.html',
 			template:'src/playlist.html',
+			favicon:'src/favicon.ico',
 			minify:{
-				removeComments:true
+				removeComments:true,
+				collapseInlineTagWhitespace:true,
+				minifyCSS:true
 			},
 			chunks:['playlist']
 		}),
@@ -69,13 +75,16 @@ module.exports = {
 			// filename:'song-[hash].html',
 			filename:'song.html',
 			template:'src/song.html',
+			favicon:'src/favicon.ico',
 			minify:{
-				removeComments:true
+				removeComments:true,
+				collapseInlineTagWhitespace:true,
+				minifyCSS:true
 			},
 			chunks:['song']
 		}),
 		new webpack.optimize.UglifyJsPlugin(),
-		new ExtractTextPlugin("css/[name]-[contenthash].css")
+		new ExtractTextPlugin("css/[name].css")
 	]
 
 }
