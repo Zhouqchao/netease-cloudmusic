@@ -150,10 +150,7 @@ body{
 	-webkit-animation-play-state: paused;
 	animation-play-state: paused;
 }
-.disc-container .light.no-animation,
-.disc-container .cover.no-animation{
-	-webkit-animation: none !important;	
-}
+
 
 /*animation style*/
 

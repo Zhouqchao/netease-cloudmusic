@@ -171,8 +171,6 @@ $(function(){
 					_this.$iconWrapper.css('opacity',1);
 					_this.$discCt.removeClass('playing');
 					_this.$needle.addClass('needle-rotate');
-					_this.$cover.addClass('no-animation');
-					_this.$light.addClass('no-animation');
 				}
 				pause();
 			})
@@ -184,8 +182,6 @@ $(function(){
 					_this.$discCt.addClass('playing');
 					_this.$iconWrapper.animate({'opacity':0},2000);
 					_this.$needle.removeClass('needle-rotate');	
-					_this.$cover.removeClass('no-animation');
-					_this.$light.removeClass('no-animation');
 				}
 				play();
 			})
