@@ -14,6 +14,7 @@ $(function(){
 			// this.bindEvent();
 		}
 
+		//连接LeanCloud
 		Player.prototype.linkToLeanCloud = function(){
 			var APP_ID = 'DBDdgDjhDUF86XBUsX2Ql15X-gzGzoHsz';
 			var APP_KEY = 'tAQUlyLMWrsge4kJQRP4WlV7';
@@ -24,6 +25,7 @@ $(function(){
 			});			
 		}	
 
+		//初始化变量
 		Player.prototype.init = function(){
 			this.$page = this.$ct.find('.page');
 			this.$discCt = this.$ct.find('.disc-container');
@@ -44,7 +46,8 @@ $(function(){
 			this.id = location.search.slice(1).split('=')[1];
 			this.audio = document.createElement('audio');
 		}
-
+		
+		//获取LeanCloud中的歌曲信息
 		Player.prototype.getSongData = function(){
 			var _this = this;
 
@@ -55,12 +58,18 @@ $(function(){
 			  	//设置网页title
 			  	document.title = song.name;
 			  	//在这里调用
+			  	
+			  	//渲染歌曲部分
 				_this.renderSong(song);
+				//渲染歌词部分
 				_this.renderLyric(song);
+				//显示页面
 				_this.$page.show();
+				//绑定事件
 				_this.bindEvent();
 			});		
 		}
+
 		//渲染歌曲
 		Player.prototype.renderSong = function(song){
 			this.$coverImg.attr('src',song.cover);
@@ -72,6 +81,7 @@ $(function(){
 			this.audio.setAttribute('preload','auto');
 			this.$songTitle.text(song.name+' - '+song.singer);		
 		}
+
 		//渲染歌词
 		Player.prototype.renderLyric = function(song){
 			var _this = this;
@@ -113,6 +123,7 @@ $(function(){
 			this.getCertainLine(sentences);
 		}
 
+		//实时获取歌词并高亮
 		Player.prototype.getCertainLine = function(sentences){
 			var _this = this;
 			var $whichLine;
@@ -134,6 +145,8 @@ $(function(){
 					break;
 				}
 			}
+
+			//设定一个计时器监控需要高亮的歌词
 			setTimeout(function(){
 				_this.getCertainLine(sentences);
 			},300)		
@@ -148,24 +161,33 @@ $(function(){
 			// 	_this.$discCt.addClass('playing');
 			// }
 
+
 			this.$discCt.removeClass('playing');
 			this.$needle.addClass('needle-rotate');
-			//设置播放暂停动画
+
+			//设置点击暂停按钮触发的动画
 			this.$iconPause.on('click',function(){
-				_this.audio.pause();
-				_this.$iconWrapper.css('opacity',1);
-				_this.$discCt.removeClass('playing');
-				_this.$needle.addClass('needle-rotate');
+				function pause(){
+					_this.audio.pause();
+					_this.$iconWrapper.css('opacity',1);
+					_this.$discCt.removeClass('playing');
+					_this.$needle.addClass('needle-rotate');
+				}
+				pause();
 			})
 
+			//设置点击播放按钮触发的动画
 			this.$iconPlay.on('click',function(){
-				_this.audio.play();
-				_this.$discCt.addClass('playing');
-				_this.$iconWrapper.animate({'opacity':0},2000);
-
-				_this.$needle.removeClass('needle-rotate');
+				function play(){
+					_this.audio.play();
+					_this.$discCt.addClass('playing');
+					_this.$iconWrapper.animate({'opacity':0},2000);
+					_this.$needle.removeClass('needle-rotate');	
+				}
+				play();
 			})
 
+			//歌曲播放结束，取消动画
 			this.audio.addEventListener('ended',function(){
 				_this.$cover.css({
 					'transform':'rotate(0deg)'
@@ -177,6 +199,8 @@ $(function(){
 
 				_this.$needle.addClass('needle-rotate');
 			})
+
+			//点击this.$cover,触发暂停事件
 			this.$cover.on('click',function(){
 				_this.$iconPause.trigger('click');
 			})			

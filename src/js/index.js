@@ -19,7 +19,6 @@ $(function(){
 		var RenderIndexPage = function($ct){
 			this.$ct = $ct;
 			this.init();
-			// this.bindEvent();
 			this.linkToLeanCloud();
 			this.getPlayLists();
 			this.getSongsData();
@@ -27,6 +26,7 @@ $(function(){
 			this.bindEvent();
 		}
 
+		//连接到LeanCloud
 		RenderIndexPage.prototype.linkToLeanCloud = function(){
 			var APP_ID = 'DBDdgDjhDUF86XBUsX2Ql15X-gzGzoHsz';
 			var APP_KEY = 'tAQUlyLMWrsge4kJQRP4WlV7';
@@ -36,6 +36,8 @@ $(function(){
 			  appKey: APP_KEY
 			});			
 		}
+
+		//初始化变量
 		RenderIndexPage.prototype.init = function(){
 			this.$latestSongs = this.$ct.find('.latestSongs ul');
 			this.$hotSongs = this.$ct.find('.hotMusicList');
@@ -56,9 +58,9 @@ $(function(){
 			this.$noResult = this.$ct.find('.no-result');
 			this.$hotSearchList = this.$ct.find('.hotSearchList');
 			this.$loadingImg = this.$ct.find('.searchMusic .loading');
-			// this.linkToLeanCloud();
 		}
 
+		//获取LeanCloud歌单信息
 		RenderIndexPage.prototype.getPlayLists = function(){
 			var _this = this;
 
@@ -73,7 +75,7 @@ $(function(){
 		    })		
 		}
 
-
+		//渲染推荐歌单列表
 		RenderIndexPage.prototype.renderPlayLists = function(playLists){
 			var _this = this;
 
@@ -93,6 +95,7 @@ $(function(){
 		    });		
 		}
 
+		//获取歌曲信息
 		RenderIndexPage.prototype.getSongsData = function(){
 			var _this = this;
 
@@ -115,6 +118,7 @@ $(function(){
 			});    		
 		}
 
+		//渲染最新音乐列表
 		RenderIndexPage.prototype.renderLatestSongs = function(songs){
 			var _this = this;
 
@@ -162,6 +166,7 @@ $(function(){
 			// $hotLoadingImg.hide();		
 		}
 
+		//渲染热歌榜Tab
 		RenderIndexPage.prototype.renderHotSearchList = function(songs){
 			var _this = this;
 
@@ -184,9 +189,11 @@ $(function(){
 			}
 		}
 
+		//绑定事件
 		RenderIndexPage.prototype.bindEvent = function(){
 			var _this = this;
 
+			//点击input,实时更新搜索提示
 			this.$searchInput.on('input',function(){	
 				var value = $(this).val().trim();
 
@@ -204,6 +211,8 @@ $(function(){
 
 			var timer = null;
 
+			//给input绑定keyup事件,实时更新搜索提示结果。
+			//按下键盘enter键，更新搜索结果列表，并且更新搜索记录
 			this.$searchInput.keyup(function(e){
 
 				if(timer){
@@ -293,12 +302,14 @@ $(function(){
 				},400);	 
 			});	
 
+			//给input绑定focus事件
 			this.$searchInput.focus(function(){
 				$(this).trigger('input');
 				$(this).trigger('keyup');
 				_this.$searchFinalResult.empty().hide();
 			})
 
+			//给input绑定删除事件
 			this.$clearBtn.on('click',function(){
 				  _this.$searchInput.val('').focus();
 				  $(this).hide();
@@ -357,12 +368,9 @@ $(function(){
 					})			
 				})	
 
-			// 	//点击enter后的最终搜索记录.searchFinalResult
-			// this.$searchFinalResult.on('click','li',function(){
-			// 	_this.$searchInput.val($(this).text());
-			// })
+
 		
-			//点击 热门搜索
+			//点击热门搜索时，触发
 			this.$hotSearch.on('click','li',function(){
 				_this.$hotSearch.hide();
 				_this.$historyRecord.hide();
@@ -383,7 +391,6 @@ $(function(){
 					if(songsInfo.length === 0){
 						_this.$hotSearch.hide();
 						_this.$noResult.show();
-						// return false;
 					}else{		
 						var song=songsInfo[0].attributes;
 						song.id = songsInfo[0].id;
@@ -413,6 +420,7 @@ $(function(){
 				}
 			})
 
+			//点击搜索记录时，触发
 			this.$historyRecord.on('click','li',function(){
 				_this.$hotSearch.hide();
 		 		_this.$historyRecord.hide();				
@@ -453,7 +461,6 @@ $(function(){
 									+'</svg>'
 									+'</a>'
 								+'</li>';
-				 		// $searchFinalResult.empty().append(html);
 				 		_this.$searchFinalResult.empty().append(html).show();
 					}		
 				})

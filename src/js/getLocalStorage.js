@@ -10,6 +10,7 @@ module.exports = (function(){
 			this.bindEvent();
 		}
 
+		//初始化变量
 		GetLocalStorage.prototype.init = function(){
 			this.$historyList = this.$ct.find('.historyRecord');
 			this.$input = this.$ct.find('input');
@@ -17,9 +18,11 @@ module.exports = (function(){
 			this.songs = (localStorage.getItem('songs') == null ? [] : JSON.parse(localStorage.getItem('songs')));//页面加载获取localStorage
 		}
 
+		//绑定事件
 		GetLocalStorage.prototype.bindEvent = function(){
 			var _this = this;
 			
+			//给input绑定keypress事件，按下键盘enter键时触发
 			this.$input.on('keypress',function(e){
 				if(e.which === 13){ 
 					_this.value= $(this).val().trim();
@@ -35,6 +38,8 @@ module.exports = (function(){
 					_this.renderHistoryList();
 				}
 			}),
+
+			//给class="remove"按钮绑定click事件，删除搜索记录
 			this.$historyList.on('click','.remove',function(e){
 				e.stopPropagation(); //阻止时间冒泡，即阻止触发$historyList中的li点击事件
 				//更新songs
@@ -52,6 +57,7 @@ module.exports = (function(){
 			})			
 		}
 
+		//渲染搜索记录列表
 		GetLocalStorage.prototype.renderHistoryList = function(){
 			var _this = this;
 

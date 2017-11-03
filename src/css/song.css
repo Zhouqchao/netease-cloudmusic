@@ -41,6 +41,8 @@ body{
 
 /*global style*/
 
+/*page style*/
+
 .page{
 	height: 100%;
 	background-color: #BFBFBF;
@@ -49,6 +51,9 @@ body{
 	position: relative;
 	display: none;
 }
+
+/*disc style*/
+
 .disc-container{
 	padding-top: 1.3rem;
 }
@@ -145,6 +150,9 @@ body{
 	-webkit-animation-play-state: paused;
 	animation-play-state: paused;
 }
+
+/*animation style*/
+
 @-webkit-keyframes circling{
 	0% {
 		transform: rotate(0deg);
@@ -167,6 +175,9 @@ body{
 .disc-container.playing .icon-play{
 	display: none;
 }
+
+/*lyric style*/
+
 .song-description{
 	color: #AEABAC;
 	text-align: center;
@@ -202,6 +213,8 @@ body{
 .song-description .lines p.highlight{
 	color: #fff;
 }
+
+/*link style*/
 
 .page .links{
 	position: absolute;

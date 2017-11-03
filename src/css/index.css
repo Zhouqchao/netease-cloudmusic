@@ -41,13 +41,15 @@ body{
 
  /*global style*/
 
+/*page style*/
+
 .page{
 	width:100%;
 	overflow: hidden;
 	display: none;
 }
 
-/*header*/
+/*header style*/
 header{
 	position: fixed;
 	top: 0;
@@ -104,11 +106,7 @@ header .download::after{
 	transform-origin: top left;
 }
 
-
-
-
-
-/*nav globalTabs*/
+/*nav  style*/
 
 
 nav.globalTabs{
@@ -146,7 +144,7 @@ nav.globalTabs{
 }
 
 
-/*tabContent*/
+/*tabContent style*/
 .tabContent>li{
 	width: 100%;
 	float: left;
@@ -158,7 +156,7 @@ nav.globalTabs{
 }
 
 
-/*main*/
+/*main style*/
 
 
 .title{
@@ -180,6 +178,9 @@ nav.globalTabs{
 	background: #D33A31;
 
 }
+
+/*playlist style*/
+
 .playLists ul{
 	display: flex;
 	flex-wrap: wrap;
@@ -225,7 +226,7 @@ nav.globalTabs{
 	padding: 6px 2px 0 6px;
 }
 
-/*latestSongs*/
+/*latestSongs style & hotMusic style*/
 
 .latestSongs ul li,
 .hotMusic ul li{
@@ -285,7 +286,8 @@ nav.globalTabs{
 }
 
 
-/*footer ad*/
+/*footer  style */
+
 footer{
 	background: url('../images/recommand_bg_2x.png') no-repeat center center;
 }
@@ -320,7 +322,7 @@ section.ad .copyright{
 }
 
 
-/*hotMusic*/
+/*hotMusic style*/
 
 .hotMusic .banner{
 	width: 100%;
@@ -396,7 +398,8 @@ section.ad .copyright{
 	color: #999;
 	display: none;
 }
-/*searchMusic*/
+
+/*searchMusic style*/
 
 .searchMusic .search-ct{
 	width: 9.375rem;
@@ -554,7 +557,7 @@ section.ad .copyright{
 }
 
 
-/*history record*/
+/*historyRecord style*/
 
 .historyRecord{
 	padding: 0 0.3125rem;
@@ -597,13 +600,15 @@ div.no-result{
 
 
 
-/*文字单行显示，多了省略号表示*/
+
 .latestSongs li p,
 .hotMusic li p,
 .searchFinalResult li p{
 	position: relative;
 	width: 8.375rem;
 }
+
+/*文字单行显示，多了省略号表示*/
 
 .latestSongs li p span,
 .hotMusic li p span,
