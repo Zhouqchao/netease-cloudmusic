@@ -35,7 +35,8 @@ module.exports = {
 					options:{
 						name:'[name].[ext]',
 						outputPath:'images/',
-						// publicPath:'http://127.0.0.1:8080/dist/'
+						// publicPath:'http://127.0.0.1:8080/dist/',
+						// 路径一定要写成在线URL,写成相对路径会报错，获取不到。
 						publicPath:'http://zhouqichao.com/netease-cloudmusic/dist/'
 					}
 				}

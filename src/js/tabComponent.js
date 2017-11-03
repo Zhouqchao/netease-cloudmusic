@@ -22,8 +22,8 @@ module.exports = (function(){
           
           this.menuList.forEach(function(menu,i){
             menu.onclick = function(e){
-              document.body.scrollTop = document.documentElement.scrollTop = 0;
               // $(window).scrollTop(0);//每次切换tab都让滚动条滚到顶端
+              document.body.scrollTop = document.documentElement.scrollTop = 0;
               var target = e.target;
               var index = [].indexOf.call(self.menuList,target);
               self.menuList.forEach(function(menu,i){
