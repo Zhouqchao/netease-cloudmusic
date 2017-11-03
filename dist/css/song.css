@@ -148,8 +148,11 @@ body{
 	-webkit-animation:circling 10s infinite linear;
 	animation:circling 10s infinite linear;
 	-webkit-animation-play-state: paused;
-	-webkit-animation: none !important;
 	animation-play-state: paused;
+}
+.disc-container .light.no-animation,
+.disc-container .cover.no-animation{
+	-webkit-animation: none !important;	
 }
 
 /*animation style*/
