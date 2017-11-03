@@ -1,5 +1,4 @@
 # 仿移动端网易云音乐
----
 
 ### JavaScript + jQuery + LeanCloud仿移动端网易云音乐
 
