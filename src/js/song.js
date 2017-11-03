@@ -184,8 +184,8 @@ $(function(){
 					_this.$discCt.addClass('playing');
 					_this.$iconWrapper.animate({'opacity':0},2000);
 					_this.$needle.removeClass('needle-rotate');	
-					_this.$cover.remove('no-animation');
-					_this.$light.remove('no-animation');
+					_this.$cover.removeClass('no-animation');
+					_this.$light.removeClass('no-animation');
 				}
 				play();
 			})
