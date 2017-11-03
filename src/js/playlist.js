@@ -92,22 +92,6 @@ $(function(){
 			this.$songList.prepend('<h3 class="title">歌曲列表</h3>');
 		}
 
-		//绑定事件
-		GetPlayList.prototype.bindEvent = function(){
-			var _this = this;
-
-			//点击down/up箭头按钮，展开完整歌单简介/展示部分歌单简介
-			this.$downBtn.on('click',function(){
-				_this.$briefText.toggleClass('whole-text');
-				_this.$downBtn.toggleClass('whole-text');
-			})
-
-			//点击部分歌单简介，触发this.$downBtn的click事件
-			this.$briefText.on('click',function(){
-				_this.$downBtn.trigger('click');
-			})		
-		}
-
 		//获取所有歌曲信息
 		GetPlayList.prototype.getSongListData = function(){
 			var _this = this;
@@ -152,6 +136,22 @@ $(function(){
 			this.$ct.show().removeClass('bg-color');
 		}
 
+		//绑定事件
+		GetPlayList.prototype.bindEvent = function(){
+			var _this = this;
+
+			//点击down/up箭头按钮，展开完整歌单简介/展示部分歌单简介
+			this.$downBtn.on('click',function(){
+				_this.$briefText.toggleClass('whole-text');
+				_this.$downBtn.toggleClass('whole-text');
+			})
+
+			//点击部分歌单简介，触发this.$downBtn的click事件
+			this.$briefText.on('click',function(){
+				_this.$downBtn.trigger('click');
+			})		
+		}
+		
 		return GetPlayList;
 	})();
 

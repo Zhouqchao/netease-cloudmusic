@@ -32,21 +32,7 @@ module.exports = (function(){
               this.classList.add('active');
               self.contentList[index].classList.add('active');
             }
-          });
-          // $('.globalTabs ul>li').each(function(i,menu){
-          //   $(this).on('click',function(){
-          //       $(window).scrollTop(0);//每次切换tab都让滚动条滚到顶端
-          //       var index = $(this).index();
-          //       $('.globalTabs ul>li').each(function(i,menu){
-          //         $(this).removeClass('active');
-          //         $('.tabContent>li').eq(i).removeClass('active');
-          //       });
-
-          //     $(this).addClass('active');
-
-          //     $('.tabContent>li').eq(index).addClass('active');
-          //   });
-          // });          
+          });         
       }  
 
       return Tab;

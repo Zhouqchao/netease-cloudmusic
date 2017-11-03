@@ -11,7 +11,6 @@ $(function(){
 			this.init();
 			this.linkToLeanCloud();
 			this.getSongData();
-			// this.bindEvent();
 		}
 
 		//连接LeanCloud

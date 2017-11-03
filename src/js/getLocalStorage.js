@@ -72,4 +72,3 @@ module.exports = (function(){
 	return GetLocalStorage;
 })();
 
-// new GetLocalStorage($('body'));
